@@ -43,18 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- THIS IS THE MOST IMPORTANT PART ---
     // This function is where you will connect your *real* AI.
     // For now, it's just a "dummy" function with pre-written answers.
-    function getBotResponse(userText) {
-        let botResponse = "Je ne suis pas sûr de comprendre. Pourriez-vous reformuler?";
+   function getBotResponse(userText) {
+        let botResponse = "I'm not sure I understand. Could you rephrase that?"; // Changed
 
         // Simple pre-programmed rules
         const lowerCaseText = userText.toLowerCase();
 
-        if (lowerCaseText.includes("président")) {
-            botResponse = "Le président de la République française est le chef de l'État. Actuellement, c'est Emmanuel Macron.";
-        } else if (lowerCaseText.includes("cinquième république") || lowerCaseText.includes("fifth republic")) {
-            botResponse = "La Cinquième République est le système de gouvernement républicain actuel en France. Elle a été établie par Charles de Gaulle en 1958.";
-        } else if (lowerCaseText.includes("bonjour") || lowerCaseText.includes("salut")) {
-            botResponse = "Bonjour! Comment puis-je vous aider avec la politique française aujourd'hui?";
+        if (lowerCaseText.includes("president")) { // Changed
+            botResponse = "The President of the French Republic is the head of state. Currently, this is Emmanuel Macron."; // Changed
+        } else if (lowerCaseText.includes("fifth republic") || lowerCaseText.includes("cinquième république")) { // Kept French term too
+            botResponse = "The Fifth Republic is the current republican system of government in France. It was established by Charles de Gaulle in 1958."; // Changed
+        } else if (lowerCaseText.includes("hello") || lowerCaseText.includes("hi") || lowerCaseText.includes("bonjour")) {
+            botResponse = "Hello! How can I help you with French politics today?"; // Changed
         }
 
         // Add the bot's response to the UI
